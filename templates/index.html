@@ -1,0 +1,22 @@
+<!-- show dns with flask-table module with table variable -->
+{% extends "base.html" %}
+{% block content %}
+    <h1>DNS</h1>
+    <table class="table table-striped">
+        <tr>
+            <th>#</th>
+            <th>Timestamp</th>
+            <th>IP</th>
+            <th>DOMAIN</th>
+        </tr>
+<!--        extract data from table -->
+        {% for row in table %}
+            <tr>
+                <td>{{loop.index}}</td>
+                <td>{{ row.timestamp }}</td>
+                <td>{{ row.ip }}</td>
+                <td>{{ row.domain }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
